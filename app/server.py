@@ -1,6 +1,8 @@
 import aiohttp
 import asyncio
 import uvicorn
+import sys
+from pathlib import Path
 from fastai import *
 from fastai.vision import *
 from io import BytesIO
@@ -9,10 +11,10 @@ from starlette.middleware.cors import CORSMiddleware
 from starlette.responses import HTMLResponse, JSONResponse
 from starlette.staticfiles import StaticFiles
 
-export_file_url = 'https://www.dropbox.com/s/6bgq8t6yextloqp/export.pkl?raw=1'
-export_file_name = 'export.pkl'
+export_file_url = 'https://drive.google.com/uc?export=download&id=1qxGf2nE0CapfEnPK8pyMCQ9U6XJRdRYr'
+export_file_name = 'guitar_model.pkl'
 
-classes = ['black', 'grizzly', 'teddys']
+classes = ['stratocaster', 'sg', 'les_paul']
 path = Path(__file__).parent
 
 app = Starlette()
